@@ -1,0 +1,16 @@
+.header {
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    background-color:rgb(252, 117, 117);
+}
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }

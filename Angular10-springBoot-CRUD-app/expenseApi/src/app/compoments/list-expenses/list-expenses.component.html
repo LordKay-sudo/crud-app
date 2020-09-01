@@ -1,0 +1,21 @@
+
+<a class ="bigLink" routerLink="/addexpense">Add Expense</a>
+<input type="text" placeholder="type to filter"
+        [(ngModel)]="filters.keyword"
+        name="keyword"
+        (input)="listExpenses()">
+<select name="sortBy" [(ngModel)]="filters.sortBy" (change)="listExpenses">
+    <option>Name</option>
+    <option>Amount</option>
+</select>
+<div class="container" *ngFor="let expense of expenses"> 
+    <div class="row">
+        <div class = "column">Expense: {{expense.expense}}</div>
+        <div class = "column">Amount: {{expense.amount  | currency: 'ZWL' }}</div>
+        <div class = "column">Description: {{expense.description}}</div>
+    </div>
+    <div class="row">
+        <div class = "column1"><a routerLink="/editexpense/{{ expense.id}}">Edit</a></div>
+        <div class = "column1"><button class="btn" (click)="deleteExpense(expense.id)">Delete</button></div>
+    </div>
+</div>
